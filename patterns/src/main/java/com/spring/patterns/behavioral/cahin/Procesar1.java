@@ -1,0 +1,17 @@
+package com.spring.patterns.behavioral.cahin;
+
+public class Procesar1 implements Proceso{
+    private static final int ESTADO = 1;
+    private Proceso siguiente;
+    public Procesar1(Proceso next) {
+        siguiente = next;
+    }
+    @Override
+    public void procesar(int estado) {
+        if (estado == ESTADO){
+            System.out.println("El proceso se ejecuta en 1");
+        } else {
+            siguiente.procesar(estado);
+        }
+    }
+}
